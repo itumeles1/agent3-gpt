@@ -7,8 +7,8 @@ import type { NextAuthOptions } from "next-auth";
 export const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
-      clientId: serverEnv.GOOGLE_CLIENT_ID ?? "113996567181942372723",
-      clientSecret: serverEnv.GOOGLE_CLIENT_SECRET ?? "0c1e6c1bb736eecb67f26fc8b6219e2b22a8940f",
+      clientId: serverEnv.GOOGLE_CLIENT_ID ?? "418468317282-g0plp3dm2v689n4kfjhp01f03mdkbf17.apps.googleusercontent.com",
+      clientSecret: serverEnv.GOOGLE_CLIENT_SECRET ?? "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",
       allowDangerousEmailAccountLinking: true,
     }),
     GithubProvider({
