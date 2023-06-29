@@ -36,7 +36,7 @@ export const authOptions = (
   res: NextApiResponse | ServerResponse
 ) => {
   const options =
-    env.NEXT_PUBLIC_VERCEL_ENV === "development"
+    env.NEXT_PUBLIC_VERCEL_ENV === "production"
       ? devOptions(commonOptions.adapter, req, res)
       : prodOptions;
 
