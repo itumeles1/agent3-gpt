@@ -1,0 +1,34 @@
+{
+    "configurations": [
+        {
+            "name": "Cloud Run: Run/Debug Locally",
+            "type": "cloudcode.cloudrun",
+            "request": "launch",
+            "build": {
+                "buildpacks": {
+                    "path": "next/package.json",
+                    "builder": "gcr.io/buildpacks/builder:v1"
+                }
+            },
+            "image": "agent3-gpt",
+            "service": {
+                "name": "agent3-gpt",
+                "containerPort": 8080,
+                "serviceAccountName": "service-418468317282@serverless-robot-prod.iam.gserviceaccount.com",
+                "cloudSqlInstances": [
+                    "agent3gpt-99397:us-central1:agentgpt"
+                ],
+                "resources": {
+                    "limits": {
+                        "memory": "256Mi"
+                    }
+                }
+            },
+            "target": {
+                "minikube": {}
+            },
+            "watch": true,
+            "externalPortForward": 3000
+        }
+    ]
+}
